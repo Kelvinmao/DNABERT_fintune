@@ -49,6 +49,24 @@ Generate three CSV files from your dataset: `train.csv`, `dev.csv`, and `test.cs
 Navigate to the `finetune` directory and set up the necessary environment variables. Then run the fine-tuning script.
 
 #### Single-GPU Training
+
+Please clone the DNABERT2 repository first:
+```bash
+# create and activate virtual python environment
+conda create -n dna python=3.8
+conda activate dna
+
+# (optional if you would like to use flash attention)
+# install triton from source
+git clone https://github.com/openai/triton.git;
+cd triton/python;
+pip install cmake; # build-time dependency
+pip install -e .
+
+# install required packages
+python3 -m pip install -r requirements.txt
+```
+
 ```bash
 cd finetune
 
